@@ -1,0 +1,8 @@
+body{
+    width:100%;
+}
+.inner{
+    background-color:skyblue;
+    height:1px;
+    width:300px;
+}

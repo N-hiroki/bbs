@@ -1,5 +1,6 @@
 <?php
     //アップロード処理
+    $bbs_id = $_POST['bbs_id'];
     if(isset($_FILES['img']) && is_uploaded_file($_FILES['img']['tmp_name'])){
         $old_name = $_FILES['img']['tmp_name'];
         $new_name = date("YmdHis");
@@ -20,10 +21,10 @@
         }
         if(move_uploaded_file($old_name, 'album/'.$new_name)){
             $new_name = 'album/'.$new_name;
-            header("Location: index.php?img=$new_name");
+            header("Location: bbs.php?img=$new_name&bbs_id=$bbs_id");
             exit();
         }else{
-            header('Location: index.php');
+            header('Location: bbs.php');
             exit();
         }
     }
